@@ -40,6 +40,7 @@ defmodule Haikunator do
     token = if range > 0, do: random(range)
 
     [@adjectives, @nouns]
+    |> IO.inspect(label: "Data")
     |> Enum.map(&sample/1)
     |> Enum.concat(List.wrap(token))
     |> Enum.join(delimiter)
